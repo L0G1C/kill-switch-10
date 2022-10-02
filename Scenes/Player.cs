@@ -16,8 +16,8 @@ public class Player : KinematicBody2D
 	public override void _PhysicsProcess(float delta)
 	{
 		var inputVector = Vector2.Zero;
-		inputVector.x = Input.GetActionStrength("ui_right") - Input.GetActionStrength("ui_left");
-		inputVector.y = Input.GetActionStrength("ui_down") - Input.GetActionStrength("ui_up");
+		inputVector.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
+		inputVector.y = Input.GetActionStrength("down") - Input.GetActionStrength("up");
 
 		inputVector = inputVector.Normalized(); //trim vector to normalized length
 
