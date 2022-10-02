@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
-[ext_resource path="res://Assets/light.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Textures/2DLight.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -22,6 +22,6 @@ texture = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
-scale = Vector2( 0.05, 0.05 )
+scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 3 )
 shadow_enabled = true
