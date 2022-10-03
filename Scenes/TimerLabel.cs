@@ -11,6 +11,8 @@ public class TimerLabel : Label
     {
         base._Ready();
 
+        Text = "10.00";
+
         _levelTimer = GetNode<Timer>("Timer");
         _waitTimer = new Timer();
         _waitTimer.WaitTime = 1;
@@ -28,6 +30,7 @@ public class TimerLabel : Label
         _levelTimerStarted = true;
     }
     
-    Text =_levelTimer.TimeLeft.ToString();
+    if (_levelTimerStarted)
+        Text =_levelTimer.TimeLeft.ToString("n2");
  }
 }
