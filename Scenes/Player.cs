@@ -26,6 +26,6 @@ public class Player : KinematicBody2D
 		else
 			velocity = velocity.MoveToward(Vector2.Zero, FRICTION * delta);		
 
-		MoveAndCollide(velocity * delta);
+		velocity = MoveAndSlide(velocity);
 	}
 }
