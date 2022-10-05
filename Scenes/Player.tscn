@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
@@ -40,6 +40,61 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "WalkLeft"
+length = 0.72
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 87, 88, 89, 90, 91, 92, 93 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "WalkRight"
+length = 0.71
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 80, 81, 82, 83, 84, 85, 86 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "WalkUp"
+length = 0.72
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 94, 95, 96, 97, 98, 99, 100 ]
+}
+
+[sub_resource type="AnimationNodeStateMachine" id=7]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
 __meta__ = {
@@ -48,7 +103,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 80
+hframes = 101
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -60,6 +115,7 @@ energy = 0.45
 shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="."]
+visible = false
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 energy = 1.02
@@ -70,3 +126,11 @@ shadow_item_cull_mask = 2
 autoplay = "Idle"
 anims/Idle = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+anims/WalkLeft = SubResource( 5 )
+anims/WalkRight = SubResource( 4 )
+anims/WalkUp = SubResource( 6 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 7 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 8 )
