@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/2DLight.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/StateMachine.cs" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -101,6 +102,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource( 4 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 101
@@ -115,7 +119,6 @@ energy = 0.45
 shadow_enabled = true
 
 [node name="Light2D2" type="Light2D" parent="."]
-visible = false
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 energy = 1.02
