@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Player.png" type="Texture" id=2]
@@ -68,6 +68,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "WalkDown"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 102, 103, 104, 105, 106, 107 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -148,8 +165,8 @@ animation = "WalkUp"
 [sub_resource type="AnimationNodeAnimation" id=13]
 animation = "WalkRight"
 
-[sub_resource type="AnimationNodeAnimation" id=24]
-animation = "WalkRight"
+[sub_resource type="AnimationNodeAnimation" id=26]
+animation = "WalkDown"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id=14]
 blend_point_0/node = SubResource( 11 )
@@ -158,7 +175,7 @@ blend_point_1/node = SubResource( 12 )
 blend_point_1/pos = Vector2( 0, -1.1 )
 blend_point_2/node = SubResource( 13 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 24 )
+blend_point_3/node = SubResource( 26 )
 blend_point_3/pos = Vector2( 0, 1.1 )
 min_space = Vector2( -1, -1.1 )
 max_space = Vector2( 1, 1.1 )
@@ -170,7 +187,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachine" id=9]
 states/Idle/node = SubResource( 21 )
-states/Idle/position = Vector2( 192, 97 )
+states/Idle/position = Vector2( 195, 97 )
 states/Walk/node = SubResource( 14 )
 states/Walk/position = Vector2( 415, 97 )
 transitions = [ "Idle", "Walk", SubResource( 22 ), "Walk", "Idle", SubResource( 23 ) ]
@@ -189,7 +206,7 @@ script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 101
+hframes = 108
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -211,6 +228,7 @@ shadow_item_cull_mask = 2
 anims/Idle = SubResource( 2 )
 anims/IdleLeft = SubResource( 17 )
 anims/RESET = SubResource( 3 )
+anims/WalkDown = SubResource( 25 )
 anims/WalkLeft = SubResource( 5 )
 anims/WalkRight = SubResource( 4 )
 anims/WalkUp = SubResource( 6 )
