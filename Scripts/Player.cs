@@ -13,17 +13,17 @@ public class Player : KinematicBody2D
 
 	public override void _Ready()
 	{		
+		_animTree = GetNode<AnimationTree>("AnimationTree");
+		_animState = (AnimationNodeStateMachinePlayback)_animTree.Get("parameters/playback");
+
+		_animTree.Active = true;
 	}
 
 	public override void _PhysicsProcess(float delta)
 	{
 		var inputVector = Vector2.Zero;
-		_animTree = GetNode<AnimationTree>("AnimationTree");
-		_animState = (AnimationNodeStateMachinePlayback)_animTree.Get("parameters/playback");
-
 		inputVector.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
 		inputVector.y = Input.GetActionStrength("down") - Input.GetActionStrength("up");
-
 		inputVector = inputVector.Normalized(); //trim vector to normalized length
 
 		if (inputVector != Vector2.Zero)	
@@ -40,5 +40,11 @@ public class Player : KinematicBody2D
 		}
 
 		velocity = MoveAndSlide(velocity);
+
+		for (int i = 0; i < GetSlideCount(); i++)
+		{
+			var collision = GetSlideCollision(i);
+			GD.Print("I collided with ", ((Node)collision.Collider).Name);
+		}
 	}
 }
