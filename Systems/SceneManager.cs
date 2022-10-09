@@ -4,11 +4,12 @@ using System;
 public class SceneManager : Control
 {
     private Node _levelInstance;
-    private Node _main2D;
+    public Node _main2D;
+    public static SceneManager Instance;
 
     public override void _Ready()
     {
-        _main2D = GetNode<Node>("Main2D");
+        Instance = this;
     }
 
     public void UnloadLevel()
@@ -29,10 +30,5 @@ public class SceneManager : Control
             _levelInstance = levelResource.Instance();
             _main2D.AddChild(_levelInstance);
         }
-    }
-
-    public void OnPlayBtnPressed()
-    {
-        LoadLevel("Level_0");
     }
 }

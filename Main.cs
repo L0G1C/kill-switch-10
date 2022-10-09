@@ -2,18 +2,14 @@ using Godot;
 using System;
 
 public class Main : Control
-{
-	// Declare member variables here. Examples:
-	// private int a = 2;
-	// private string b = "text";
-
-	// Called when the node enters the scene tree for the first time.
+{	
 	public override void _Ready()
-	{
-		
+	{		
+		SceneManager.Instance._main2D = GetNode<Node>("Main2D");
 	}
 
-	public void _on_Button_pressed(){
-		GetTree().ChangeScene("res://Scenes/Level_0.tscn");
-	}
+    public void OnPlayBtnPressed()
+    {	
+        SceneManager.Instance.LoadLevel("Level_0");
+    }
 }
