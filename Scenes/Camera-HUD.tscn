@@ -3,7 +3,6 @@
 [ext_resource path="res://Scenes/Timer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/TimerLabel.cs" type="Script" id=3]
 
-
 [node name="Camera2D" type="Camera2D"]
 current = true
 zoom = Vector2( 0.45, 0.45 )
