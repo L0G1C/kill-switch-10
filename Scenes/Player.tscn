@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
-[ext_resource path="res://Assets/Player.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Art/Player.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/2DLight.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/StateMachine.cs" type="Script" id=4]
 
