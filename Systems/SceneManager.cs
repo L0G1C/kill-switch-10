@@ -28,7 +28,7 @@ public class SceneManager : Control
         if (levelResource != null)
         {
             _levelInstance = levelResource.Instance();
-            _main2D.AddChild(_levelInstance);
+            GetTree().ChangeSceneTo(levelResource);
         }
     }
 }

@@ -44,7 +44,15 @@ public class Player : KinematicBody2D
 		for (int i = 0; i < GetSlideCount(); i++)
 		{
 			var collision = GetSlideCollision(i);
-			GD.Print("I collided with ", ((Node)collision.Collider).Name);
+			if (((Node)collision.Collider).IsInGroup("Doors"))
+			{
+				var prefix = "Level_";
+				var currentLevel = GetParent().Name;
+				var levelIndex = currentLevel.Substring(currentLevel.LastIndexOf('_') + 1);
+				
+				SceneManager.Instance.LoadLevel(prefix + (Convert.ToInt32(levelIndex) + 1).ToString());
+			}
+				
 		}
 	}
 }
