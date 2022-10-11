@@ -29,6 +29,6 @@ public class SceneManager : Control
         {
             _levelInstance = levelResource.Instance();
             GetTree().ChangeSceneTo(levelResource);
-        }
+        }        
     }
 }
