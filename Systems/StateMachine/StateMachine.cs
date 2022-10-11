@@ -12,5 +12,13 @@ public class StateMachine : BaseStateMachine
         base._Ready();
         
         Instance = this;
+        ChangeState("NotBackedUp");
+    }
+
+    public void HandleBackedUpEvent()
+    {
+        GD.Print("Handling BackedUp Event!");
+        GD.Print("Current State: " + CurrentState);
+        ChangeState("BackedUpState");
     }
 }
