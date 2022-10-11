@@ -2,13 +2,13 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public class BackedUpState : BaseState
+public class DefaultState : BaseState
 {
-     public void HandleBackedUpEvent()
+     public void HandleDefaultEvent()
     {
-        GD.Print("Handling BackedUpState Event!");
+        GD.Print("Handling DefaultState Event!");
         GD.Print("Current State: " + StateMachine.Instance.CurrentState);
-        StateMachine.Instance.ChangeState("BackedUpState");
+        StateMachine.Instance.ChangeState("DefaultState");
         GD.Print("New State: " + StateMachine.Instance.CurrentState);
     }
 }
