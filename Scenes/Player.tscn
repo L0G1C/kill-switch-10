@@ -1,9 +1,8 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Player.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Art/Player.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Textures/2DLight.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/StateMachine.cs" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 7.0
@@ -200,9 +199,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
-
-[node name="StateMachine" type="Node" parent="."]
-script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

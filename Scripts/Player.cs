@@ -50,6 +50,7 @@ public class Player : KinematicBody2D
 				var currentLevel = GetParent().Name;
 				var levelIndex = currentLevel.Substring(currentLevel.LastIndexOf('_') + 1);
 				
+				EmitSignal("backup");
 				SceneManager.Instance.LoadLevel(prefix + (Convert.ToInt32(levelIndex) + 1).ToString());
 			}
 				
