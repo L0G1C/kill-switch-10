@@ -22,9 +22,8 @@ public class BaseStateMachine : Node
 
 	public override void _Ready()
 	{
-		base._Ready();
-
-		// States node shuld have all states as children with BaseState class
+		base._Ready();			
+		PrintTree()	;
 		States = GetNode<Node>("States").GetChildren().OfType<BaseState>().ToList();
 	}
 
@@ -56,13 +55,10 @@ public class BaseStateMachine : Node
 	/// optional <data> attribute to send with event.
 	public void ChangeState(string stateName, Dictionary<string, object> data = null)
 	{
-		GD.Print($"Changing State to: {stateName}");
 		foreach (BaseState state in States)
-		{
-			GD.Print($"Does {stateName} match {state.GetType().ToString()}?");
+		{			
 			if (stateName == state.GetType().ToString())
 			{
-				GD.Print($"Match!");
 				SetState(state, data);
 				return;
 			}

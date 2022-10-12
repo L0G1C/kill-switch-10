@@ -5,8 +5,8 @@
 [ext_resource path="res://Assets/Tilesets/tileset.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Camera-HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/StateMachine.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Art/Door_0.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/Level_1.cs" type="Script" id=8]
 
 [sub_resource type="OccluderPolygon2D" id=6]
 polygon = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -138,6 +138,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [node name="Level_1" type="Node2D" groups=["Levels"]]
 position = Vector2( 221, -23 )
+script = ExtResource( 8 )
 
 [node name="Ambient" type="CanvasModulate" parent="."]
 color = Color( 0.352941, 0.352941, 0.352941, 1 )
@@ -164,5 +165,3 @@ DoorTexture = ExtResource( 7 )
 position = Vector2( 14, 75 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 4 )]
-
-[node name="StateMachine" parent="." instance=ExtResource( 6 )]

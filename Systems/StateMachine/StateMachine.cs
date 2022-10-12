@@ -11,11 +11,8 @@ public class StateMachine : BaseStateMachine
     {
         base._Ready();
         
-        Instance = this;      
-
-        if (String.IsNullOrEmpty(StateMachine.Instance.CurrentState))  
-            ChangeState("DefaultState");
-    }
+        Instance = this;           
+    }    
 
     public void HandleDefaultEvent()
     {

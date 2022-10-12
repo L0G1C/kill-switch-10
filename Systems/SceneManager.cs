@@ -29,6 +29,15 @@ public class SceneManager : Control
         {
             _levelInstance = levelResource.Instance();
             GetTree().ChangeSceneTo(levelResource);
-        }        
+            //GetTree().Root.AddChild(_levelInstance);            
+        }                                
+    }
+
+    public void StateSetup(string levelName)
+    {
+        // Setup StateMachine Signal Connections            
+        var player = GetNode<Node>($"/root/{levelName}/Player");
+        var SM = GetNode<Node>("/root/StateMachine");            
+        player.Connect("BackupEvent", SM, "HandleBackedUpEvent");
     }
 }
