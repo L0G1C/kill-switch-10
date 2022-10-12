@@ -42,7 +42,9 @@ public class BaseStateMachine : Node
 		}
 
 		LastState = CurrentState;
+		GD.Print($"Last State: {LastState}");
 		CurrentState = newState.GetType().ToString();
+		GD.Print($"Current State: {CurrentState}");
 
 		_state = newState;
 		EmitSignal(nameof(PreStart));
@@ -54,10 +56,13 @@ public class BaseStateMachine : Node
 	/// optional <data> attribute to send with event.
 	public void ChangeState(string stateName, Dictionary<string, object> data = null)
 	{
+		GD.Print($"Changing State to: {stateName}");
 		foreach (BaseState state in States)
 		{
+			GD.Print($"Does {stateName} match {state.GetType().ToString()}?");
 			if (stateName == state.GetType().ToString())
 			{
+				GD.Print($"Match!");
 				SetState(state, data);
 				return;
 			}

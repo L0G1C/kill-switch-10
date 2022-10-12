@@ -4,11 +4,9 @@ using System.Collections.Generic;
 
 public class DefaultState : BaseState
 {
-     public void HandleDefaultEvent()
+     public override void _Ready()
     {
-        GD.Print("Handling DefaultState Event!");
-        GD.Print("Current State: " + StateMachine.Instance.CurrentState);
-        StateMachine.Instance.ChangeState("DefaultState");
-        GD.Print("New State: " + StateMachine.Instance.CurrentState);
+        var backupIcon = GetNode<TextureRect>("HUD/PanelContainer/VBoxContainer/HBoxContainer/BackupIcon");
+        backupIcon.Visible = false;
     }
 }

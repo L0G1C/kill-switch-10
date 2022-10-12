@@ -7,6 +7,8 @@ public class Player : KinematicBody2D
 	 const float ACCELERATION = 450;
 	 const float MAX_SPEED = 100;
 	 const float FRICTION = 450;
+	 [Signal]
+	 public delegate void BackupEvent();
 
 	 private AnimationTree _animTree;
 	 private AnimationNodeStateMachinePlayback _animState;
@@ -50,7 +52,7 @@ public class Player : KinematicBody2D
 				var currentLevel = GetParent().Name;
 				var levelIndex = currentLevel.Substring(currentLevel.LastIndexOf('_') + 1);
 				
-				EmitSignal("backup");
+				EmitSignal(nameof(BackupEvent));
 				SceneManager.Instance.LoadLevel(prefix + (Convert.ToInt32(levelIndex) + 1).ToString());
 			}
 				

@@ -4,11 +4,9 @@ using System.Collections.Generic;
 
 public class BackedUpState : BaseState
 {
-     public void HandleBackedUpEvent()
+    public override void _Ready()
     {
-        GD.Print("Handling BackedUpState Event!");
-        GD.Print("Current State: " + StateMachine.Instance.CurrentState);
-        StateMachine.Instance.ChangeState("BackedUpState");
-        GD.Print("New State: " + StateMachine.Instance.CurrentState);
+        var backupIcon = GetNode<TextureRect>("HUD/PanelContainer/VBoxContainer/HBoxContainer/BackupIcon");
+        backupIcon.Visible = true;
     }
 }
