@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Tilesets/tileset.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/Camera-HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/StateMachine.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Art/Door_0.png" type="Texture" id=7]
 
 [sub_resource type="OccluderPolygon2D" id=6]
@@ -165,4 +165,4 @@ position = Vector2( 14, 75 )
 
 [node name="Camera2D" parent="Player" instance=ExtResource( 4 )]
 
-[node name="HUD" parent="." instance=ExtResource( 6 )]
+[node name="StateMachine" parent="." instance=ExtResource( 6 )]

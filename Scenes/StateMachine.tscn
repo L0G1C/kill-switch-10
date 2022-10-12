@@ -63,9 +63,9 @@ margin_bottom = 23.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="States/BackedUpState/HUD/PanelContainer/VBoxContainer"]
 margin_right = 16.0
-margin_bottom = 16.0
 
 [node name="BackupIcon" type="TextureRect" parent="States/BackedUpState/HUD/PanelContainer/VBoxContainer/HBoxContainer"]
+visible = false
 margin_right = 16.0
 margin_bottom = 16.0
 texture = ExtResource( 2 )
