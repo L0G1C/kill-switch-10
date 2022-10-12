@@ -15,19 +15,13 @@ public class StateMachine : BaseStateMachine
     }    
 
     public void HandleDefaultEvent()
-    {
-        GD.Print("Handling DefaultState Event!");
-        GD.Print("Current State: " + StateMachine.Instance.CurrentState);
-        StateMachine.Instance.ChangeState("DefaultState");
-        GD.Print("New State: " + StateMachine.Instance.CurrentState);
+    {     
+        StateMachine.Instance.ChangeState("DefaultState");     
     }
 
     public void HandleBackedUpEvent()
-    {
-        GD.Print("Handling BackedUpState Event!");
-        GD.Print("Current State: " + StateMachine.Instance.CurrentState);
-        StateMachine.Instance.ChangeState("BackedUpState");
-        GD.Print("New State: " + StateMachine.Instance.CurrentState);
+    {        
+        StateMachine.Instance.ChangeState("BackedUpState");        
     }
 
 }
