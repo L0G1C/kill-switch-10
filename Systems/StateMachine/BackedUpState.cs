@@ -10,7 +10,7 @@ public class BackedUpState : BaseState
         GetNode<TextureRect>("HUD/PanelContainer/VBoxContainer/HBoxContainer/BackupIcon").Visible = true;        
     }
 
-    public virtual void OnExit(string exitState)
+    public override void OnExit(string exitState)
 	{
         GetNode<CanvasLayer>("HUD").Visible = false;
     }

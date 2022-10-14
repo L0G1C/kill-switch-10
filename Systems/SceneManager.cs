@@ -47,11 +47,14 @@ public class SceneManager : Control
         }                                
     }
 
-    public void StateSetup(string levelName)
+    public void ScemeSetup(string levelName)
     {
-        // Setup StateMachine Signal Connections            
+        // Setup Signal Connections            
         var player = GetNode<Node>($"/root/{levelName}/Player");
-        var SM = GetNode<Node>("/root/StateMachine");            
-        player.Connect("BackupEvent", SM, "HandleBackedUpEvent");
+        var StateMachine = GetNode<Node>("/root/StateMachine");            
+        var SoundManager = GetNode<Node>("/root/SoundManager");
+
+        player.Connect("BackupEvent", StateMachine, "HandleBackedUpEvent");
+        player.Connect("StepEvent", SoundManager, "HandleStepEvent");
     }
 }

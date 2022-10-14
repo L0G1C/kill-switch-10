@@ -68,6 +68,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Right Foot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Left Foot:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3, 7 ) ]
+}
 
 [sub_resource type="Animation" id=25]
 resource_name = "WalkDown"
@@ -84,6 +108,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 102, 103, 104, 105, 106, 107 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "StepTrigger"
+}, {
+"args": [  ],
+"method": "StepTrigger"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -102,6 +143,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 87, 88, 89, 90, 91, 92, 93 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "StepTrigger"
+}, {
+"args": [  ],
+"method": "StepTrigger"
+} ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "WalkRight"
@@ -119,6 +177,71 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 80, 81, 82, 83, 84, 85, 86 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Left Foot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 3, 7 ), Vector2( 3, 7 ), Vector2( 3, 7 ), Vector2( 3, 7 ), Vector2( 3, 6 ), Vector2( 3, 5 ), Vector2( 3, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Left Foot:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Right Foot:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -3, 6 ), Vector2( -3, 5 ), Vector2( -3, 6 ), Vector2( -3, 7 ), Vector2( -3, 7 ), Vector2( -3, 7 ), Vector2( -3, 7 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Right Foot:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "StepTrigger"
+}, {
+"args": [  ],
+"method": "StepTrigger"
+} ]
+}
 
 [sub_resource type="Animation" id=6]
 resource_name = "WalkUp"
@@ -135,6 +258,23 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 94, 95, 96, 97, 98, 99, 100 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "StepTrigger"
+}, {
+"args": [  ],
+"method": "StepTrigger"
+} ]
 }
 
 [sub_resource type="AnimationNodeAnimation" id=18]
@@ -196,16 +336,17 @@ start_node = "Idle"
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-hframes = 108
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="Body" type="Node" parent="."]
+
+[node name="Right Foot" type="Position2D" parent="Body"]
+position = Vector2( -3, 6 )
+
+[node name="Left Foot" type="Position2D" parent="Body"]
+position = Vector2( 3, 7 )
 
 [node name="Light2D" type="Light2D" parent="."]
 scale = Vector2( 0.4, 0.4 )
@@ -219,6 +360,10 @@ texture = ExtResource( 3 )
 energy = 1.02
 shadow_enabled = true
 shadow_item_cull_mask = 2
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 108
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 2 )

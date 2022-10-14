@@ -7,8 +7,12 @@ public class Player : KinematicBody2D
 	 const float ACCELERATION = 450;
 	 const float MAX_SPEED = 100;
 	 const float FRICTION = 450;
+	 
 	 [Signal]
 	 public delegate void BackupEvent();
+
+	[Signal]
+	 public delegate void StepEvent();
 
 	 private AnimationTree _animTree;
 	 private AnimationNodeStateMachinePlayback _animState;
@@ -57,5 +61,10 @@ public class Player : KinematicBody2D
 			}
 				
 		}
+	}
+
+	public void StepTrigger()
+	{
+		EmitSignal(nameof(StepEvent));
 	}
 }

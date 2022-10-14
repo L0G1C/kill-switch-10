@@ -9,7 +9,7 @@ public class InEncounterState : BaseState
         GetNode<CanvasLayer>("HUD").Visible = true;            
     }
 
-    public virtual void OnExit(string exitState)
+    public override void OnExit(string exitState)
 	{
         GetNode<CanvasLayer>("HUD").Visible = false;
     }
