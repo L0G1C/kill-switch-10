@@ -2,8 +2,9 @@
 
 [ext_resource path="res://Scripts/Timer.cs" type="Script" id=1]
 
-
 [node name="Timer" type="Timer"]
 wait_time = 10.0
 one_shot = true
 script = ExtResource( 1 )
+
+[connection signal="timeout" from="." to="." method="OnTimerTimeout"]

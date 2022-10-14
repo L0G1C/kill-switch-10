@@ -19,6 +19,20 @@ public class SceneManager : Control
         _levelInstance = null;
     }
 
+    internal void LoadEncounterLevel()
+    {
+        UnloadLevel();
+        var levelPath = $"res://Scenes/Encounter.tscn"; // TODO - Randomly Generate Encounter name
+        var levelResource = (PackedScene)GD.Load(levelPath);
+
+        if (levelResource != null)
+        {
+            _levelInstance = levelResource.Instance();
+            GetTree().ChangeSceneTo(levelResource);
+            //GetTree().Root.AddChild(_levelInstance);            
+        }            
+    }
+
     public void LoadLevel(string levelName)
     {
         UnloadLevel();

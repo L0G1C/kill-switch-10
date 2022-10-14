@@ -9,4 +9,9 @@ public class DefaultState : BaseState
         GetNode<CanvasLayer>("HUD").Visible = true;
         GetNode<TextureRect>("HUD/PanelContainer/VBoxContainer/HBoxContainer/BackupIcon").Visible = false;        
     }
+
+    public virtual void OnExit(string exitState)
+	{
+        GetNode<CanvasLayer>("HUD").Visible = false;
+    }
 }
