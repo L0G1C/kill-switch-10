@@ -18,7 +18,7 @@ config/icon="res://icon.png"
 
 SceneManager="*res://Systems/SceneManager.cs"
 StateMachine="*res://Scenes/StateMachine.tscn"
-SoundManager="*res://Systems/SoundManager.cs"
+SoundManager="*res://Scenes/SoundManager.tscn"
 
 [display]
 
