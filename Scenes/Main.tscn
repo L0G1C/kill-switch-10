@@ -20,4 +20,15 @@ text = "Play"
 
 [node name="Main2D" type="Node2D" parent="."]
 
+[node name="Title" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -50.5
+margin_top = 25.0
+margin_right = 50.5
+margin_bottom = 14.0
+text = "kill switch 10"
+align = 1
+uppercase = true
+
 [connection signal="pressed" from="Button" to="." method="OnPlayBtnPressed"]

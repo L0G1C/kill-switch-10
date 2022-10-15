@@ -3,11 +3,8 @@ using System;
 
 public class Timer : Godot.Timer
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
+    [Signal]
+	 public delegate void EncounterEvent();
     public override void _Ready()
     {
         
@@ -15,6 +12,7 @@ public class Timer : Godot.Timer
 
     public void OnTimerTimeout()
     {        
+        EmitSignal(nameof(EncounterEvent));
         SceneManager.Instance.LoadEncounterLevel();
     }
 }

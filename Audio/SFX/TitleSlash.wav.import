@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/TitleSlash.wav-77d652ad3af6917ec4421dcec3abadbd.sample"
+path="res://.import/TitleSlash.wav-98256559668c38638c8f02c68f011143.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/TitleSlash.wav"
-dest_files=[ "res://.import/TitleSlash.wav-77d652ad3af6917ec4421dcec3abadbd.sample" ]
+source_file="res://Audio/SFX/TitleSlash.wav"
+dest_files=[ "res://.import/TitleSlash.wav-98256559668c38638c8f02c68f011143.sample" ]
 
 [params]
 

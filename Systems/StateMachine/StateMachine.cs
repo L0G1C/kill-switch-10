@@ -24,4 +24,9 @@ public class StateMachine : BaseStateMachine
         StateMachine.Instance.ChangeState("BackedUpState");        
     }
 
+    public void HandleEncounterEvent()
+    {
+        StateMachine.Instance.ChangeState("InEncounterState");
+    }
+
 }

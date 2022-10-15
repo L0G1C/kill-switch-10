@@ -27,7 +27,7 @@ public class SceneManager : Control
 
         if (levelResource != null)
         {
-            _levelInstance = levelResource.Instance();
+            _levelInstance = levelResource.Instance();            
             GetTree().ChangeSceneTo(levelResource);
             //GetTree().Root.AddChild(_levelInstance);            
         }            
@@ -47,14 +47,17 @@ public class SceneManager : Control
         }                                
     }
 
-    public void ScemeSetup(string levelName)
+    public void SceneSetup(string levelName)
     {
         // Setup Signal Connections            
         var player = GetNode<Node>($"/root/{levelName}/Player");
+        var timer = GetNode<Timer>($"/root/{levelName}/Player/Camera2D/CanvasLayer/TimerLabel/Timer");
         var StateMachine = GetNode<Node>("/root/StateMachine");            
-        var SoundManager = GetNode<Node>("/root/SoundManager");
+        var SoundManager = GetNode<Node>("/root/SoundManager");        
 
         player.Connect("BackupEvent", StateMachine, "HandleBackedUpEvent");
+        timer.Connect("EncounterEvent", StateMachine, "HandleEncounterEvent");
         player.Connect("StepEvent", SoundManager, "HandleStepEvent");
+        
     }
 }
