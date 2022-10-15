@@ -52,11 +52,14 @@ public class Player : KinematicBody2D
 			var collision = GetSlideCollision(i);
 			if (((Node)collision.Collider).IsInGroup("Doors"))
 			{
+				
 				var prefix = "Level_";
 				var currentLevel = GetParent().Name;
 				var levelIndex = currentLevel.Substring(currentLevel.LastIndexOf('_') + 1);
 				
-				EmitSignal(nameof(BackupEvent));
+				if (StateMachine.Instance.CurrentState == nameof(DefaultState))
+					EmitSignal(nameof(BackupEvent));
+					
 				SceneManager.Instance.LoadLevel(prefix + (Convert.ToInt32(levelIndex) + 1).ToString());
 			}
 				
