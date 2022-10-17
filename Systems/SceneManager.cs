@@ -3,13 +3,12 @@ using System;
 
 public class SceneManager : Control
 {
-	private Node _levelInstance;
-	public Node _main2D;
+	private Node _levelInstance;	
 	public static SceneManager Instance;
 
 	public override void _Ready()
 	{
-		Instance = this;
+		Instance = this;		
 	}
 
 	public void UnloadLevel()
@@ -51,13 +50,12 @@ public class SceneManager : Control
 	{
 		// Setup Signal Connections            
 		var player = GetNode<Node>($"/root/{levelName}/Player");
-		var timer = GetNode<Timer>($"/root/{levelName}/Player/Camera2D/CanvasLayer/TimerLabel/Timer");
+		var timer = GetNode<Timer>($"/root/{levelName}/Player/Camera2D/CanvasLayer/TimerLabel/Timer");		
 		var StateMachine = GetNode<Node>("/root/StateMachine");            
 		var SoundManager = GetNode<Node>("/root/SoundManager");        
 
 		player.Connect("BackupEvent", StateMachine, "HandleBackedUpEvent");
 		timer.Connect("EncounterEvent", StateMachine, "HandleEncounterEvent");
-		player.Connect("StepEvent", SoundManager, "HandleStepEvent");
-		
+		player.Connect("StepEvent", SoundManager, "HandleStepEvent");				
 	}
 }

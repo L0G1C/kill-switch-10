@@ -1,6 +1,65 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Main.cs" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Title"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "OnTitleAnimationComplete"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "StartMusic"
+} ]
+}
 
 [node name="Main" type="Control"]
 anchor_right = 1.0
@@ -21,6 +80,7 @@ text = "Play"
 [node name="Main2D" type="Node2D" parent="."]
 
 [node name="Title" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -50.5
@@ -30,5 +90,10 @@ margin_bottom = 14.0
 text = "kill switch 10"
 align = 1
 uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Title"
+anims/RESET = SubResource( 1 )
+anims/Title = SubResource( 2 )
 
 [connection signal="pressed" from="Button" to="." method="OnPlayBtnPressed"]

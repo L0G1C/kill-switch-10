@@ -22,8 +22,7 @@ public class BaseStateMachine : Node
 
 	public override void _Ready()
 	{
-		base._Ready();			
-		PrintTree()	;
+		base._Ready();					
 		States = GetNode<Node>("States").GetChildren().OfType<BaseState>().ToList();
 	}
 
