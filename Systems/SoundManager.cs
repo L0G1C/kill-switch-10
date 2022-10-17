@@ -37,7 +37,7 @@ public class SoundManager : Node
     }
 
     public void PlayTitleMusic()
-    {        
+    {           
         _TitleMusicPlayer.Play();
     }
 
