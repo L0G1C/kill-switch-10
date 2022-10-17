@@ -16,6 +16,7 @@ public class Player : KinematicBody2D
 
 	 private AnimationTree _animTree;
 	 private AnimationNodeStateMachinePlayback _animState;
+	 private bool _openingDoor = false;
 
 	public override void _Ready()
 	{		
@@ -25,8 +26,11 @@ public class Player : KinematicBody2D
 		_animTree.Active = true;
 	}
 
-	public override void _PhysicsProcess(float delta)
+	public override async void _PhysicsProcess(float delta)
 	{
+		if(_openingDoor)
+			return;
+		
 		var inputVector = Vector2.Zero;
 		inputVector.x = Input.GetActionStrength("right") - Input.GetActionStrength("left");
 		inputVector.y = Input.GetActionStrength("down") - Input.GetActionStrength("up");
@@ -50,9 +54,22 @@ public class Player : KinematicBody2D
 		for (int i = 0; i < GetSlideCount(); i++)
 		{
 			var collision = GetSlideCollision(i);
+
+			// Freeze P, play animations and load next level
 			if (((Node)collision.Collider).IsInGroup("Doors"))
 			{
 				
+				_openingDoor = true;
+				_animTree.Active = false;
+				GetNode<Timer>("Camera2D/CanvasLayer/TimerLabel/Timer").Paused = true;
+				var doorAnim = GetNode<AnimationPlayer>("../TileMap/Door/AnimationPlayer"); //Todo change to signal
+				doorAnim.Play("Open");
+				await ToSignal(doorAnim, "animation_finished");
+
+				var playerDoorAnim = GetNode<AnimationPlayer>("AnimationPlayer");
+				playerDoorAnim.Play("OpenDoor");
+				await ToSignal(playerDoorAnim, "animation_finished");
+
 				var prefix = "Level_";
 				var currentLevel = GetParent().Name;
 				var levelIndex = currentLevel.Substring(currentLevel.LastIndexOf('_') + 1);
