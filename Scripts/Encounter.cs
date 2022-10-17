@@ -12,6 +12,7 @@ public class Encounter : Node2D
 	{
 		//GetNode<Light2D>("Player/Light2D").Enabled = false;
 		GetNode<Light2D>("Player/Light2D2").Enabled = false;
+		SoundManager.Instance.PlayEncounterMusic();
 	}
 
 //  // Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Door.mp3-d6e14089ac4a77b7f75cb0b5382f9442.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Door.mp3"
+dest_files=[ "res://.import/Door.mp3-d6e14089ac4a77b7f75cb0b5382f9442.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -21,7 +21,7 @@ public class Main : Control
 
 	public void OnTitleAnimationComplete()
 	{		
-		SoundManager.Instance.HandleTitleSlash();
+		SoundManager.Instance.PlayTitleSlash();
 	}
 
 	public void StartMusic()

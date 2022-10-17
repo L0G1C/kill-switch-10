@@ -8,7 +8,7 @@
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 240, 180 )
+position = Vector2( 232, 216 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2( 0, -50 )
@@ -23,3 +23,8 @@ zoom = Vector2( 0.8, 0.8 )
 position = Vector2( 231, 117 )
 scale = Vector2( 0.558668, 0.466525 )
 texture = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 168, 192, 168, 240, 296, 240, 296, 192, 448, 192, 448, 272, 16, 272, 16, 16, 448, 16, 448, 192, 296, 192 )

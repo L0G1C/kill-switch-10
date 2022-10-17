@@ -18,7 +18,7 @@ public class SceneManager : Control
 		_levelInstance = null;
 	}
 
-	internal void LoadEncounterLevel()
+	public void LoadEncounterLevel()
 	{
 		UnloadLevel();
 		var levelPath = $"res://Scenes/Encounters/Encounter.tscn"; // TODO - Randomly Generate Encounter name
